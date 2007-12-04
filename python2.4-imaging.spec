@@ -22,7 +22,7 @@ BuildRequires:	python2.4-devel
 BuildRequires:	tkinter2.4
 BuildRequires:	jpeg-devel >= 6b
 BuildRequires:	png-devel >= 1.0.1
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 BuildRequires:	freetype2-devel
 BuildRequires:	tcl
 BuildRequires:	tcl-devel
