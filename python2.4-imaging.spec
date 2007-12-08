@@ -1,6 +1,6 @@
 %define name python2.4-imaging
 %define version 1.1.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		%{name}
 Version: 	%{version}
@@ -42,7 +42,7 @@ internal representation, and powerful image processing capabilities.
 %package devel
 Summary:	Header files for python-imaging
 Group:		Development/C
-Requires:	python-imaging = %{version}
+Requires:	%{name} = %{version}
 
 %description devel
 Header files for the Python Imaging Library version %{version}.
