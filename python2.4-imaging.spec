@@ -28,6 +28,7 @@ BuildRequires:	tcl
 BuildRequires:	tcl-devel
 BuildRequires:	tk
 BuildRequires:	tk-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Python Imaging Library version %{version}
