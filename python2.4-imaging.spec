@@ -1,6 +1,6 @@
 %define name python2.4-imaging
 %define version 1.1.6
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:		%{name}
 Version: 	%{version}
@@ -71,9 +71,16 @@ rm -fr %{buildroot}
 find . -type f | xargs perl -pi -e 's@/usr/local/bin/python@/usr/bin/python@'
 
 python2.4 setup.py install --root=%{buildroot} --record INSTALLED_FILES
-cd libImaging
+pushd libImaging
 mkdir -p  %{buildroot}%{_includedir}/python2.4
 install -m 644 ImPlatform.h Imaging.h %{buildroot}%{_includedir}/python2.4
+popd
+
+# prevent conflict with normal python-imaging package
+for bin in %{buildroot}%{_bindir}/*; do
+    mv $bin %{buildroot}%{_bindir}/`basename $bin .py`2.4.py
+done
+perl -pi -e 's|^%{_bindir}/(\w+)\.py$|%{_bindir}/${1}2.4.py|' INSTALLED_FILES
 
 %clean
 rm -rf %{buildroot}
