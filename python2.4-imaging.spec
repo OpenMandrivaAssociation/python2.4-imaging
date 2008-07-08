@@ -1,7 +1,7 @@
 %define py_platsitedir         %(python2.4 -c 'import distutils.sysconfig; print distutils.sysconfig.get_python_lib(plat_specific=1)' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
 %define name python2.4-imaging
 %define version 1.1.6
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name:		%{name}
 Version: 	%{version}
@@ -58,7 +58,7 @@ bzcat %SOURCE1 > pil-handbook.pdf
 %build
 python2.4 setup.py build_ext -i
 cd Sane
-python setup.py build_ext -i
+python2.4 setup.py build_ext -i
 
 %install
 rm -fr %{buildroot}
