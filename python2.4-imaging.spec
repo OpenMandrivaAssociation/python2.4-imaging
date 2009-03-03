@@ -1,7 +1,7 @@
 %define py_platsitedir         %(python2.4 -c 'import distutils.sysconfig; print distutils.sysconfig.get_python_lib(plat_specific=1)' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
 %define name python2.4-imaging
 %define version 1.1.6
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name:		%{name}
 Version: 	%{version}
@@ -16,12 +16,10 @@ Source1:	pil-handbook.pdf.bz2
 Source2:	linux-python-paint-icon.gif
 Patch0:     %{name}-1.1.6-lib64.patch
 Requires:	python2.4
-Requires:	tkinter2.4
 Requires:	libjpeg >= 6b
 Requires:	zlib >= 1.1.2
 Requires:	libpng >= 1.0.1
 BuildRequires:	python2.4-devel
-BuildRequires:	tkinter2.4
 BuildRequires:	jpeg-devel >= 6b
 BuildRequires:	png-devel >= 1.0.1
 BuildRequires:	X11-devel
@@ -92,7 +90,6 @@ rm -rf %{buildroot}
 %py_platsitedir/PIL/_imaging.so
 %py_platsitedir/PIL/_imagingft.so
 %py_platsitedir/PIL/_imagingmath.so
-%py_platsitedir/PIL/_imagingtk.so
 %py_platsitedir/_sane.so
 %py_platsitedir/sane.py
 %py_platsitedir/sane.pyc
