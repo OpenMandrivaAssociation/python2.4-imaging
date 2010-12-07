@@ -1,7 +1,7 @@
 %define py_platsitedir         %(python2.4 -c 'import distutils.sysconfig; print distutils.sysconfig.get_python_lib(plat_specific=1)' 2>/dev/null || echo PYTHON-LIBDIR-NOT-FOUND)
 %define name python2.4-imaging
 %define version 1.1.6
-%define release %mkrel 6
+%define release %mkrel 7
 
 Name:		%{name}
 Version: 	%{version}
